@@ -21,8 +21,7 @@ public class CartListActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerViewList;
     private ManagementCart managementCart;
-    private TextView totalFeeTxt, taxTxt, deliveryTxt, totalTxt, emptyTxt;
-    private double tax;
+    private TextView totalFeeTxt, deliveryTxt, totalTxt, emptyTxt;
     private ScrollView scrollView;
 
     @Override
@@ -76,23 +75,25 @@ public class CartListActivity extends AppCompatActivity {
     }
 
     private void calculateCard() {
-        double percentTax = 0.02;
-        double delivery = 10;
+        int delivery;
+        if (managementCart.getTotalFee() >= 20000){
+            delivery = 0;
+        }
+        else{
+            delivery = 3000;
+        }
 
-        tax = Math.round((managementCart.getTotalFee() * percentTax) * 100.0) / 100.0;
-        double total = Math.round((managementCart.getTotalFee() + tax + delivery) * 100.0) / 100.0;
-        double itemTotal = Math.round(managementCart.getTotalFee() * 100.0) / 100.0;
+        int total = managementCart.getTotalFee() + delivery;
+        int itemTotal = managementCart.getTotalFee();
 
-        totalFeeTxt.setText("$" + itemTotal);
-        taxTxt.setText("$" + tax);
-        deliveryTxt.setText("$" + delivery);
-        totalTxt.setText("$" + total);
+        totalFeeTxt.setText(itemTotal+"원");
+        deliveryTxt.setText(delivery+"원");
+        totalTxt.setText(total+"원");
     }
 
     private void initView() {
         recyclerViewList = findViewById(R.id.recyclerview);
         totalFeeTxt = findViewById(R.id.totalFeeTxt);
-        taxTxt = findViewById(R.id.taxTxt);
         deliveryTxt = findViewById(R.id.deliveryTxt);
         totalTxt = findViewById(R.id.totalTxt);
         emptyTxt = findViewById(R.id.emptyTxt);

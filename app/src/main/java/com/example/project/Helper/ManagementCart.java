@@ -60,9 +60,9 @@ public class ManagementCart {
         changeNumberItemsListener.changed();
     }
 
-    public Double getTotalFee() {
+    public int getTotalFee() {
         ArrayList<FoodDomain> listFood2 = getListCard();
-        double fee = 0;
+        int fee = 0;
         for (int i = 0; i < listFood2.size(); i++) {
             fee = fee + (listFood2.get(i).getFee() * listFood2.get(i).getNumberInCart());
         }
