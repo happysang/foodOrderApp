@@ -42,7 +42,7 @@
         android:id="@+id/fee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0.0"
+        android:text="0"
         android:textColor="#373b54"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -54,11 +54,10 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
-        android:text="$"
+        android:text="원"
         android:textColor="#ff3d00"
         app:layout_constraintBottom_toBottomOf="@+id/fee"
-        app:layout_constraintEnd_toStartOf="@+id/fee"
+        app:layout_constraintStart_toEndOf="@+id/fee"
         app:layout_constraintTop_toBottomOf="@+id/pic" />
 
     <TextView
@@ -71,7 +70,7 @@
         android:paddingTop="3dp"
         android:paddingEnd="10dp"
         android:paddingBottom="3dp"
-        android:text="+ Add"
+        android:text="추가하기"
         android:textColor="#ffffff"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -58,9 +58,10 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewPopularList.setLayoutManager(linearLayoutManager);
 
         ArrayList<FoodDomain> foodlist = new ArrayList<>();
-        foodlist.add(new FoodDomain("Pepperoni pizza", "pizza1", "slices pepperoni ,mozzarella cheese, fresh oregano,  ground black pepper, pizza sauce", 9.76));
-        foodlist.add(new FoodDomain("Cheese Burger", "burger", "beef, Gouda Cheese, Special sauce, Lettuce, tomato ", 8.79));
-        foodlist.add(new FoodDomain("Vegetable pizza", "pizza2", " olive oil, Vegetable oil, pitted Kalamata, cherry tomatoes, fresh oregano, basil", 8.5));
+        foodlist.add(new FoodDomain("페퍼로니 피자", "pizza1", "맛있는 페퍼로니 피자", 10000));
+        foodlist.add(new FoodDomain("콤비네이션 피자", "pizza2", "맛있는 콤비네이션 피자", 8500));
+        foodlist.add(new FoodDomain("치즈버거", "burger", "맛있는 치즈 버거", 8000));
+
 
         adapter2 = new PopularAdapter(foodlist);
         recyclerViewPopularList.setAdapter(adapter2);
@@ -73,11 +74,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewCategoryList.setLayoutManager(linearLayoutManager);
 
         ArrayList<CategoryDomain> categoryList = new ArrayList<>();
-        categoryList.add(new CategoryDomain("Pizza", "cat_1"));
-        categoryList.add(new CategoryDomain("Burger", "cat_2"));
-        categoryList.add(new CategoryDomain("Hotdog", "cat_3"));
-        categoryList.add(new CategoryDomain("Drink", "cat_4"));
-        categoryList.add(new CategoryDomain("Dount", "cat_5"));
+        categoryList.add(new CategoryDomain("피자", "cat_1"));
+        categoryList.add(new CategoryDomain("햄버거", "cat_2"));
+        categoryList.add(new CategoryDomain("핫도그", "cat_3"));
+        categoryList.add(new CategoryDomain("음료", "cat_4"));
+        categoryList.add(new CategoryDomain("도넛", "cat_5"));
 
         adapter = new CategoryAdapter(categoryList);
         recyclerViewCategoryList.setAdapter(adapter);
