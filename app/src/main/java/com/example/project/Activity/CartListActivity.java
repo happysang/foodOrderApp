@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Button;
+import android.widget.Toast;
+import android.content.Context;
 
 import com.example.project.Adapter.CartListAdapter;
 import com.example.project.Helper.ManagementCart;
@@ -23,18 +26,20 @@ public class CartListActivity extends AppCompatActivity {
     private ManagementCart managementCart;
     private TextView totalFeeTxt, deliveryTxt, totalTxt, emptyTxt;
     private ScrollView scrollView;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_list);
-
+        this.context = this;
         managementCart = new ManagementCart(this);
 
         initView();
         initList();
         calculateCard();
         bottomNavigation();
+        purchase();
     }
     private void bottomNavigation() {
         FloatingActionButton floatingActionButton = findViewById(R.id.card_btn);
@@ -54,6 +59,20 @@ public class CartListActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void purchase() {
+        Button purchase = findViewById(R.id.purchaseButton);
+
+        purchase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "주문 접수했습니다.", Toast.LENGTH_SHORT).show();
+                managementCart.purchaseAll();
+                startActivity(new Intent(CartListActivity.this, MainActivity.class));
+            }
+        });
+    }
+
     private void initList() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerViewList.setLayoutManager(linearLayoutManager);

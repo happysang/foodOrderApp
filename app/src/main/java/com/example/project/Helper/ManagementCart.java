@@ -36,7 +36,7 @@ public class ManagementCart {
         }
 
         tinyDB.putListObject("CardList", listFood);
-        Toast.makeText(context, "Added To Your Card", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "장바구니로 옮겨졌습니다.", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -67,6 +67,10 @@ public class ManagementCart {
             fee = fee + (listFood2.get(i).getFee() * listFood2.get(i).getNumberInCart());
         }
         return fee;
+    }
+
+    public void purchaseAll() {
+        tinyDB.clear();
     }
 
 }

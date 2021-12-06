@@ -123,17 +123,17 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView16"
+            <Button
+                android:id="@+id/purchaseButton"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="16dp"
-                android:background="@drawable/orange_button_background"
-                android:gravity="center"
-                android:text="주문완료"
-                android:textColor="#ffffff"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:backgroundTint="#ff5e00"
+                android:fontFamily="sans-serif"
+                android:text="주문 완료"
+                android:textSize="34sp"
+                app:cornerRadius="20dp" />
         </LinearLayout>
     </ScrollView>
 
