@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         FloatingActionButton floatingActionButton = findViewById(R.id.card_btn);
         LinearLayout homeBtn = findViewById(R.id.homeBtn);
 
+
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
         foodlist.add(new FoodDomain("페퍼로니 피자", "pizza1", "맛있는 페퍼로니 피자", 10000));
         foodlist.add(new FoodDomain("콤비네이션 피자", "pizza2", "맛있는 콤비네이션 피자", 8500));
         foodlist.add(new FoodDomain("치즈버거", "burger", "맛있는 치즈 버거", 8000));
+        foodlist.add(new FoodDomain("핫도그", "hotdog", "맛있는 핫도그", 6000));
+        foodlist.add(new FoodDomain("코카콜라", "coke", "시원한 콜라", 1500));
+        foodlist.add(new FoodDomain("랜디스 도넛", "dounut", "맛있는 라즈베리 도넛", 4500));
 
 
         adapter2 = new PopularAdapter(foodlist);

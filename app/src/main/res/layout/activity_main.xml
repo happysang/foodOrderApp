@@ -146,9 +146,9 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintBottom_toBottomOf="@id/scrollView2"
+        app:layout_constraintEnd_toEndOf="@id/scrollView2"
+        app:layout_constraintStart_toStartOf="@id/scrollView2">
 
 
         <com.google.android.material.bottomappbar.BottomAppBar
@@ -290,9 +290,11 @@
             android:backgroundTint="#ff5e00"
             android:elevation="3dp"
             android:src="@drawable/shopping_cart"
+            android:visibility="visible"
             app:backgroundTint="#ff5e00"
             app:layout_anchor="@id/app_bar"
             app:maxImageSize="30dp"
-            app:tint="#ffffff" />
+            app:tint="#ffffff"
+            tools:visibility="visible" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
